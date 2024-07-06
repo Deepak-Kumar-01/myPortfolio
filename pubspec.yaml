@@ -72,6 +72,13 @@ flutter:
      - assets/location.png
      - assets/download.png
      - assets/github.png
+     - assets/firebase.png
+     - assets/dartlogo.png
+     - assets/phone.png
+     - assets/web.png
+     - assets/ux.png
+     - assets/dev.png
+     - assets/aws.png
      - assets/flutterLogo.png
      - assets/flutterLogo2.png
   #   - images/a_dot_ham.jpeg

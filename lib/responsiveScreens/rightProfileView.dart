@@ -51,7 +51,7 @@ class _RightProfileViewState extends State<RightProfileView> {
                     color: Colors.blue[900],
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(30.0),
-                        bottomRight: Radius.circular(5.0)
+                      topRight: Radius.circular(20)
                     ),
 
                 ),
