@@ -15,10 +15,7 @@ class _WebDeskHomeState extends State<WebDeskHome> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      // color: Colors.black87,
-      // color: Colors.white,
-      // color: Colors.transparent,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
         colors: [
           Color(0xFF000000),

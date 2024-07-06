@@ -6,3 +6,7 @@ const aboutWebDevCard="Developed a dynamic and responsive portfolio website usin
 
 //If you think good design is expensive, you should look at the cost of bad design.”
 // — Dr. Ralf Speth, Chief Executive Officer, Jaguar Land Rover
+const ugContent="I'm currently pursuing my post graduation, where my current SGPA is 7.83.";
+const pgContent="I have successfully completed my graduation with a CGPA of 7.79.";
+const internshipContent1="Hands-on project based learning developing a personalized branding website for Nandita Sharma,CEO of Zaivic Tech Wellness, an IIM Bangalore based company.";
+

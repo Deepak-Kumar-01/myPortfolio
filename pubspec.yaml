@@ -74,6 +74,8 @@ flutter:
      - assets/github.png
      - assets/firebase.png
      - assets/dartlogo.png
+     - assets/education.png
+     - assets/internship.png
      - assets/phone.png
      - assets/web.png
      - assets/ux.png

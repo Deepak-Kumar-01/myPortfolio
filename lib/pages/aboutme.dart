@@ -63,7 +63,7 @@ class _AboutMeState extends State<AboutMe> {
               ),
             ),
           ),
-          // What I'm Doing
+          // In Progress
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(
