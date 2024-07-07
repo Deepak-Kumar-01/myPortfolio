@@ -20,8 +20,12 @@ class _ResumeState extends State<Resume> {
   bool showinternLine1=false;
   double _eduLine2 = 0;
   bool showeduLine2=false;
-  double _internLine2=0;
   double _eduLine3 = 0;
+  double _internLine2=0;
+  bool _educationBlock=false;
+  bool _internshipBlock=false;
+
+
   @override
   void initState() {
     print("Resume Widget is called");
@@ -34,28 +38,53 @@ class _ResumeState extends State<Resume> {
         _width = w as double;
       });
     });
-    //First Section
-    Future.delayed(Duration(milliseconds: 300), () {
+    //First Line
+    Future.delayed(Duration(milliseconds: 500), () {
       setState(() {
         _eduLine1 = 13 as double;
-        _internLine1=14 as double;
+      });
+    });
+    //eduContent 1/ internContent 1
+    Future.delayed(Duration(milliseconds: 800), () {
+      setState(() {
         showeduLine1=true;
       });
     });
-    //Second Section
-    Future.delayed(Duration(milliseconds: 500), () {
+    //Second Line
+    Future.delayed(Duration(milliseconds: 1000), () {
       setState(() {
-        _eduLine2 = 100;
-        showeduLine2=true;
-        _internLine2=150;
-        showinternLine1=true;
+        _eduLine2 = 92;
       });
     });
-    //Third Section
-    Future.delayed(Duration(milliseconds: 500), () {
+    //Third Line
+    Future.delayed(Duration(milliseconds: 2200), () {
       setState(() {
-        _eduLine3 = 120;
-
+        _eduLine3 = 68;
+      });
+    });
+    //eduContent 2
+    Future.delayed(Duration(milliseconds: 1300), () {
+      setState(() {
+        showeduLine2=true;
+      });
+    });
+    //Internship Block
+    //Internal line 1
+    Future.delayed(Duration(milliseconds: 2800), () {
+      setState(() {
+        _internLine1=12 ;
+      });
+    });
+    //Intern Line 2
+    Future.delayed(Duration(milliseconds: 4000), () {
+      setState(() {
+        _internLine2=98;
+      });
+    });
+    //InternLine 1
+    Future.delayed(Duration(milliseconds: 3200), () {
+      setState(() {
+        showinternLine1=true;
       });
     });
   }
@@ -67,6 +96,7 @@ class _ResumeState extends State<Resume> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // //Resume Tile + Underline
           Container(
             margin: EdgeInsets.only(left: 40, top: 20),
             child: Text(
@@ -89,7 +119,7 @@ class _ResumeState extends State<Resume> {
           //-----Resume Tile + Underline------
           //Icon1(Education + Title)
           Padding(
-            padding: const EdgeInsets.only(left: 30, top: 30, bottom: 0),
+            padding: const EdgeInsets.only(left: 30, top: 20, bottom: 0),
             child: Row(
               children: [
                 // Education Card
@@ -100,10 +130,6 @@ class _ResumeState extends State<Resume> {
                     elevation: 8,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5)),
-                    // color: Color(0xB35F4EF4),
-                    // color: Color(0xFF005175),
-                    // color: Color(0xFF0E3F80),
-                    // color: Colors.blue[900],
                     color: Color(0xFF222627),
                     // color: Colors.redAccent,
                     child: Center(
@@ -114,15 +140,16 @@ class _ResumeState extends State<Resume> {
                     )),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 //Education Title
                 Container(
-                  child: const Text(
+                  child:  Text(
                     "Education",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.pink,
+                        // color: Color(0xFF4B94F4),
                         fontSize: 25,
                         fontWeight: FontWeight.bold),
                   ),
@@ -130,6 +157,7 @@ class _ResumeState extends State<Resume> {
               ],
             ),
           ),
+          //Left Line Animation + Right Side Content
           Padding(
             padding: const EdgeInsets.only(left: 30, top: 0),
             child: Row(
@@ -148,7 +176,14 @@ class _ResumeState extends State<Resume> {
                         height: _eduLine1,
                         duration: Duration(milliseconds: 500),
                         decoration: BoxDecoration(
-                          color: Colors.white54,
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFFD3D3D3),
+                              Color(0xFF2D3436),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
@@ -158,19 +193,27 @@ class _ResumeState extends State<Resume> {
                         height: 15,
                         duration: Duration(milliseconds: 500),
                         decoration: BoxDecoration(
-                            color: _eduLine1 == 13
-                                ? Colors.yellowAccent
-                                : const Color(0xFF1C1F20),
+                          gradient: LinearGradient(
+                            colors:
+                            _eduLine1==13?[Color(0xFFFFEE58),Color(0xFFD2A813)]:[const Color(0xFF1C1F20),const Color(0xFF1C1F20)]
+                          ),
                             borderRadius: BorderRadius.circular(30)),
                       ),
-                      //Animated LLine 2
+                      //Animated Line 2
                       AnimatedContainer(
                         margin: EdgeInsets.only(left: 0, top: 0),
                         width: 2,
                         height: _eduLine2,
                         duration: Duration(milliseconds: 500),
                         decoration: BoxDecoration(
-                          color: Colors.white54,
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFFD3D3D3),
+                              Color(0xFF2D3436),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
@@ -180,32 +223,30 @@ class _ResumeState extends State<Resume> {
                         height: 15,
                         duration: Duration(milliseconds: 500),
                         decoration: BoxDecoration(
-                            color: _eduLine2 == 100
-                                ? Colors.yellowAccent
-                                : const Color(0xFF1C1F20),
+                            gradient: LinearGradient(
+                                colors:
+                                _eduLine2==92?[Color(0xFFFFEE58),Color(0xFFD2A813)]:[const Color(0xFF1C1F20),const Color(0xFF1C1F20)]
+                            ),
                             borderRadius: BorderRadius.circular(30)),
                       ),
-                      //Animated Line 3
-                      // AnimatedContainer(
-                      //   margin: EdgeInsets.only(left: 0, top: 0),
-                      //   width: 2,
-                      //   height: _eduLine3,
-                      //   duration: Duration(milliseconds: 500),
-                      //   decoration: BoxDecoration(
-                      //     color: Colors.white54,
-                      //     borderRadius: BorderRadius.circular(10),
-                      //   ),
-                      // ),
-                      // //Yellow Dot
-                      // AnimatedContainer(
-                      //   width: 15,
-                      //   height: 15,
-                      //   duration: Duration(milliseconds: 500),
-                      //   decoration: BoxDecoration(
-                      //       color:_eduLine3==240?Colors.yellowAccent:const Color(0xFF1C1F20),
-                      //       borderRadius: BorderRadius.circular(30)
-                      //   ),
-                      // ),
+                      //Animation Line 3
+                      AnimatedContainer(
+                        margin: EdgeInsets.only(left: 0, top: 0),
+                        width: 2,
+                        height: _eduLine3,
+                        duration: Duration(milliseconds: 500),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFFD3D3D3),
+                              Color(0xFF2D3436),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -219,8 +260,9 @@ class _ResumeState extends State<Resume> {
                     SizedBox(
                       width: size.width * 0.4,
                       // color: Colors.yellowAccent,
-                      child: showeduLine1?AnimatedContainer(
-                        duration: Duration(milliseconds: 400),
+                      child: AnimatedOpacity(
+                        duration: Duration(milliseconds: 500),
+                        opacity: showeduLine1?1:0,
                         child: const ResumeDetails(
                           title: "JSS Academy of Technical Education [PG]",
                           session: "2023-2025",
@@ -229,16 +271,17 @@ class _ResumeState extends State<Resume> {
                           status: "Ongoing",
                           cgpa: "Pending",
                         ),
-                      ):Text(""),
+                      ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     SizedBox(
                       width: size.width * 0.4,
                       // color: Colors.green,
-                      child: showeduLine2?AnimatedContainer(
-                        duration: Duration(milliseconds: 1000),
+                      child: AnimatedOpacity(
+                        duration: Duration(milliseconds: 500),
+                        opacity: showeduLine2?1:0,
                         child: const ResumeDetails(
                           title: "DIT University, Dehradun [UG]",
                           session: "2018-2021",
@@ -247,7 +290,7 @@ class _ResumeState extends State<Resume> {
                           sgpa: "",
                           status: "Complete",
                         ),
-                      ):Text(""),
+                      ),
                     ),
                     // Container(
                     //   height: size.height*0.2,
@@ -261,12 +304,10 @@ class _ResumeState extends State<Resume> {
           ),
           //----------Education Done------------
           //Internship and Experience
-          const SizedBox(
-            height: 30,
-          ),
           //INTERNSHIP SECTION
+          //Internship Card + Title
           Padding(
-            padding: const EdgeInsets.only(left: 30, top: 30, bottom: 0),
+            padding: const EdgeInsets.only(left: 30, top: 0, bottom: 0),
             child: Row(
               children: [
                 // Internship Image Card
@@ -291,10 +332,11 @@ class _ResumeState extends State<Resume> {
                 ),
                 //Internship  Title
                 Container(
-                  child: const Text(
+                  child: Text(
                     "Internship",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.pink,
+                        // color: Color(0xFF4B94F4),
                         fontSize: 25,
                         fontWeight: FontWeight.bold),
                   ),
@@ -302,14 +344,14 @@ class _ResumeState extends State<Resume> {
               ],
             ),
           ),
-          //Internship data
+          //Internship content
           Padding(
             padding: const EdgeInsets.only(left: 30, top: 0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //left Line ANIMATION
-                Container(
+                SizedBox(
                   // color: Colors.blue,
                   width: size.width * 0.04,
                   child: Column(
@@ -321,7 +363,14 @@ class _ResumeState extends State<Resume> {
                         height: _internLine1,
                         duration: Duration(milliseconds: 500),
                         decoration: BoxDecoration(
-                          color: Colors.white54,
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFFD3D3D3),
+                              Color(0xFF2D3436),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
@@ -331,39 +380,35 @@ class _ResumeState extends State<Resume> {
                         height: 15,
                         duration: Duration(milliseconds: 500),
                         decoration: BoxDecoration(
-                            color: _internLine1 == 14
-                                ? Colors.yellowAccent
-                                : const Color(0xFF1C1F20),
+                            gradient: LinearGradient(
+                                colors:
+                                _internLine1==12?[Color(0xFFFFEE58),Color(0xFFD2A813)]:[const Color(0xFF1C1F20),const Color(0xFF1C1F20)]
+                            ),
                             borderRadius: BorderRadius.circular(30)),
                       ),
                       // //Animated LLine 2
-                      // AnimatedContainer(
-                      //   margin: EdgeInsets.only(left: 0, top: 0),
-                      //   width: 2,
-                      //   height: _internLine2,
-                      //   duration: Duration(milliseconds: 500),
-                      //   decoration: BoxDecoration(
-                      //     color: Colors.white54,
-                      //     borderRadius: BorderRadius.circular(10),
-                      //   ),
-                      // ),
-                      // //Yellow Dot
-                      // AnimatedContainer(
-                      //   width: 15,
-                      //   height: 15,
-                      //   duration: Duration(milliseconds: 500),
-                      //   decoration: BoxDecoration(
-                      //       color: _internLine2 == 150
-                      //           ? Colors.yellowAccent
-                      //           : const Color(0xFF1C1F20),
-                      //       borderRadius: BorderRadius.circular(30)),
-                      // ),
+                      AnimatedContainer(
+                        margin: EdgeInsets.only(left: 0, top: 0),
+                        width: 2,
+                        height: _internLine2,
+                        duration: Duration(milliseconds: 500),
+                        decoration: BoxDecoration(
+                          // color: Colors.white54,
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFFD3D3D3),
+                              Color(0xFF2D3436),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
                     ],
                   ),
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
+                const SizedBox(width: 20,),
                 //Right Side Content
                 //RESUME
                 Column(
@@ -373,26 +418,365 @@ class _ResumeState extends State<Resume> {
                     SizedBox(
                       width: size.width * 0.4,
                       // color: Colors.yellowAccent,
-                      child: const InternshipDetails(
-                        companyName: "Zaivic Tech Wellness Private Limited.",
-                        projectName: "Personal Branding Website",
-                        session: "2019-2020",
-                        description: internshipContent1,
-                        imagePath1: "",
-                        imagePath2: "",
-                        imagePath3: "",
-                        imagePath4: "",
+                      child: AnimatedOpacity(
+                        duration: Duration(milliseconds: 500),
+                        opacity: showinternLine1?1:0,
+                        child: const InternshipDetails(
+                          companyName: "Zaivic Tech Wellness Private Limited.",
+                          projectName: "Personal Branding Website",
+                          session: "2019-2020",
+                          description: internshipContent1,
+                          imagePath1: "",
+                          imagePath2: "",
+                          imagePath3: "",
+                          imagePath4: "",
+                        ),
                       ),
-                    ),
-                    //space
-                    const SizedBox(
-                      height: 20,
                     ),
                   ],
                 ),
               ],
             ),
           ),
+          // //Skills Card + Tile
+          Padding(
+            padding: const EdgeInsets.only(left: 30, top: 0, bottom: 0),
+            child: Row(
+              children: [
+                // Skills Image Card
+                SizedBox(
+                  width: 60,
+                  height: 60,
+                  child: Card(
+                    elevation: 8,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5)),
+                    color: Color(0xFF222627),
+                    child: Center(
+                        child: Image.asset(
+                          "assets/skills.png",
+                          width: 30,
+                          color: Colors.white,
+                        )),
+                  ),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                //Internship  Title
+                Container(
+                  child:  Text(
+                    "Skills",
+                    style: TextStyle(
+                        color: Colors.pink,
+                        // color: Color(0xFF4B94F4),
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          //Skill-Tech Cards
+          Container(
+            // color: Colors.blue,
+            margin: EdgeInsets.only(top: 20),
+            width: size.width*0.7,
+            child: Column(
+              children: [
+                //ROW 1:
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      //Dart
+                      SizedBox(
+                        width: size.width * 0.09,
+                        height: size.height * 0.18,
+                        child: Card(
+                          elevation: 8,
+                          color:  const Color(0xFF222627),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Image.asset("assets/dartlogo.png",width: 70,),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  "Dart",
+                                  style: TextStyle(
+                                    // color: Color(0xFFFFEE58),
+                                      color: Color(0xFFD6EFD8),
+                                      // color: Colors.redAccent,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      //Flutter
+                      SizedBox(
+                        width: size.width * 0.09,
+                        height: size.height * 0.18,
+                        child: Card(
+                          elevation: 8,
+                          color:  const Color(0xFF222627),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Image.asset("assets/flutter.png",width: 70,),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  "Flutter",
+                                  style: TextStyle(
+                                    // color: Color(0xFFFFEE58),
+                                      color: Color(0xFFD6EFD8),
+                                      // color: Colors.redAccent,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      //Firebase
+                      SizedBox(
+                        width: size.width * 0.09,
+                        height: size.height * 0.18,
+                        child: Card(
+                          elevation: 8,
+                          color:  const Color(0xFF222627),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Image.asset("assets/firebase.png",width: 70,),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  "Firebase",
+                                  style: TextStyle(
+                                    // color: Color(0xFFFFEE58),
+                                      color: Color(0xFFD6EFD8),
+                                      // color: Colors.redAccent,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      //Figma
+                      SizedBox(
+                        width: size.width * 0.09,
+                        height: size.height * 0.18,
+                        child: Card(
+                          elevation: 8,
+                          color:  const Color(0xFF222627),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Image.asset("assets/figma.png",width: 70,),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  "Figma",
+                                  style: TextStyle(
+                                    // color: Color(0xFFFFEE58),
+                                      color: Color(0xFFD6EFD8),
+                                      // color: Colors.redAccent,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      //AWS
+                      SizedBox(
+                        width: size.width * 0.09,
+                        height: size.height * 0.18,
+                        child: Card(
+                          elevation: 8,
+                          color:  const Color(0xFF222627),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Image.asset("assets/aws.png",width: 70,),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  "AWS",
+                                  style: TextStyle(
+                                    // color: Color(0xFFFFEE58),
+                                      color: Color(0xFFD6EFD8),
+                                      // color: Colors.redAccent,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                //ROW 2
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      //HTML
+                    SizedBox(
+                      width: size.width * 0.09,
+                      height: size.height * 0.18,
+                      child: Card(
+                        elevation: 8,
+                        color:  const Color(0xFF222627),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Image.asset("assets/html.png",width: 70,),
+                              const SizedBox(height: 10),
+                              const Text(
+                                "HTML",
+                                style: TextStyle(
+                                  // color: Color(0xFFFFEE58),
+                                    color: Color(0xFFD6EFD8),
+                                    // color: Colors.redAccent,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                      //CSS
+                      SizedBox(
+                        width: size.width * 0.09,
+                        height: size.height * 0.18,
+                        child: Card(
+                          elevation: 8,
+                          color:  const Color(0xFF222627),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Image.asset("assets/css.png",width: 70,),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  "CSS",
+                                  style: TextStyle(
+                                    // color: Color(0xFFFFEE58),
+                                      color: Color(0xFFD6EFD8),
+                                      // color: Colors.redAccent,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      //Javascript
+                      SizedBox(
+                        width: size.width * 0.09,
+                        height: size.height * 0.18,
+                        child: Card(
+                          elevation: 8,
+                          color:  const Color(0xFF222627),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Image.asset("assets/javaScript.png",width: 70,),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  "Javascript",
+                                  style: TextStyle(
+                                    // color: Color(0xFFFFEE58),
+                                      color: Color(0xFFD6EFD8),
+                                      // color: Colors.redAccent,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      //Java
+                      SizedBox(
+                        width: size.width * 0.09,
+                        height: size.height * 0.18,
+                        child: Card(
+                          elevation: 8,
+                          color:  const Color(0xFF222627),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Image.asset("assets/java.png",width: 70,),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  "Java",
+                                  style: TextStyle(
+                                    // color: Color(0xFFFFEE58),
+                                      color: Color(0xFFD6EFD8),
+                                      // color: Colors.redAccent,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      //DSA
+                      SizedBox(
+                        width: size.width * 0.09,
+                        height: size.height * 0.18,
+                        child: Card(
+                          elevation: 8,
+                          color:  const Color(0xFF222627),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Image.asset("assets/algo.png",width: 70,),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  "DSA",
+                                  style: TextStyle(
+                                    // color: Color(0xFFFFEE58),
+                                      color: Color(0xFFD6EFD8),
+                                      // color: Colors.redAccent,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+
+                  ],
+                  ),
+                ),
+                SizedBox(height: 30,)
+              ],
+            ),
+          )
         ],
       ),
     );

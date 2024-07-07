@@ -20,7 +20,7 @@ class LeftProfileView extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
-          color: Color(0xFF1C1F20),
+          color: const Color(0xFF1C1F20),
           // color:Colors.green,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -36,7 +36,7 @@ class LeftProfileView extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(100),
                       ),
-                      color: Color(0xFF211F2C),
+                      color: const Color(0xFF211F2C),
                       child: Container(
                         width: 150,
                         height: 150,

@@ -18,7 +18,7 @@ class _AboutMeState extends State<AboutMe> {
   void initState() {
     super.initState();
     int w = widget.width;
-    Future.delayed(Duration(milliseconds: 300), () {
+    Future.delayed(const Duration(milliseconds: 300), () {
       setState(() {
         w = 110;
         _width = w.toDouble();
@@ -57,13 +57,13 @@ class _AboutMeState extends State<AboutMe> {
             padding: const EdgeInsets.all(20.0),
             child: Container(
               margin: EdgeInsets.only(left: 20, top: 60),
-              child: Text(
+              child: const Text(
                 about_me,
                 style: TextStyle(color: Colors.white70, fontSize: 20),
               ),
             ),
           ),
-          // In Progress
+          // In Progress Title
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(
@@ -77,6 +77,7 @@ class _AboutMeState extends State<AboutMe> {
               ),
             ),
           ),
+          //Progress Card
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Container(
