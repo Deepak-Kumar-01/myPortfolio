@@ -80,6 +80,10 @@ flutter:
      - assets/css.png
      - assets/figma.png
      - assets/algo.png
+     - assets/poster1.png
+     - assets/poster1.jpg
+     - assets/poster2.jpg
+     - assets/view.png
      - assets/html.png
      - assets/javaScript.png
      - assets/flutter.png

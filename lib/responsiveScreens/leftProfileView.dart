@@ -42,10 +42,6 @@ class LeftProfileView extends StatelessWidget {
                         height: 150,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          // image: DecorationImage(
-                          //   image: AssetImage("assets/profileImage.jpg"),
-                          //   fit: BoxFit.cover,
-                          // ),
                         ),
                       ),
                     ),

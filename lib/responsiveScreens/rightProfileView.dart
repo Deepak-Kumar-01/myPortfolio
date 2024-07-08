@@ -33,7 +33,7 @@ class _RightProfileViewState extends State<RightProfileView> {
         child: Stack(
           children: [
             //Content Area
-            Resume(title: "Resume",width: 0,),
+            Portfolio(title: "Portfolio",width: 0,),
             // onAboutMe
             //     ? AboutMe(title: "About Me",width: 0,)
             //     : onResume

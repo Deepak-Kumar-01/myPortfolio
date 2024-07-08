@@ -22,6 +22,7 @@ class _ResumeState extends State<Resume> {
   bool showeduLine2=false;
   double _eduLine3 = 0;
   double _internLine2=0;
+  bool skillCard=false;
   bool _educationBlock=false;
   bool _internshipBlock=false;
 
@@ -45,46 +46,56 @@ class _ResumeState extends State<Resume> {
       });
     });
     //eduContent 1/ internContent 1
-    Future.delayed(Duration(milliseconds: 800), () {
+    Future.delayed(Duration(milliseconds: 500), () {
       setState(() {
         showeduLine1=true;
       });
     });
     //Second Line
-    Future.delayed(Duration(milliseconds: 1000), () {
+    Future.delayed(Duration(milliseconds: 800), () {
       setState(() {
         _eduLine2 = 92;
       });
     });
+    Future.delayed(Duration(milliseconds: 2000), () {
+      setState(() {
+        showeduLine2=true;
+      });
+    });
     //Third Line
-    Future.delayed(Duration(milliseconds: 2200), () {
+    Future.delayed(Duration(milliseconds: 1100), () {
       setState(() {
         _eduLine3 = 68;
       });
     });
     //eduContent 2
-    Future.delayed(Duration(milliseconds: 1300), () {
+    Future.delayed(Duration(milliseconds: 1050), () {
       setState(() {
         showeduLine2=true;
       });
     });
     //Internship Block
     //Internal line 1
-    Future.delayed(Duration(milliseconds: 2800), () {
+    Future.delayed(Duration(milliseconds: 1300), () {
       setState(() {
         _internLine1=12 ;
       });
     });
+    //showinternLine1
+    Future.delayed(Duration(milliseconds: 1400), () {
+      setState(() {
+        showinternLine1=true;
+      });
+    });
     //Intern Line 2
-    Future.delayed(Duration(milliseconds: 4000), () {
+    Future.delayed(Duration(milliseconds: 1300), () {
       setState(() {
         _internLine2=98;
       });
     });
-    //InternLine 1
-    Future.delayed(Duration(milliseconds: 3200), () {
+    Future.delayed(Duration(milliseconds: 2000), () {
       setState(() {
-        showinternLine1=true;
+        skillCard=true;
       });
     });
   }
@@ -261,7 +272,7 @@ class _ResumeState extends State<Resume> {
                       width: size.width * 0.4,
                       // color: Colors.yellowAccent,
                       child: AnimatedOpacity(
-                        duration: Duration(milliseconds: 500),
+                        duration: Duration(milliseconds: 300),
                         opacity: showeduLine1?1:0,
                         child: const ResumeDetails(
                           title: "JSS Academy of Technical Education [PG]",
@@ -280,7 +291,7 @@ class _ResumeState extends State<Resume> {
                       width: size.width * 0.4,
                       // color: Colors.green,
                       child: AnimatedOpacity(
-                        duration: Duration(milliseconds: 500),
+                        duration: Duration(milliseconds: 300),
                         opacity: showeduLine2?1:0,
                         child: const ResumeDetails(
                           title: "DIT University, Dehradun [UG]",
@@ -419,7 +430,7 @@ class _ResumeState extends State<Resume> {
                       width: size.width * 0.4,
                       // color: Colors.yellowAccent,
                       child: AnimatedOpacity(
-                        duration: Duration(milliseconds: 500),
+                        duration: Duration(milliseconds: 300),
                         opacity: showinternLine1?1:0,
                         child: const InternshipDetails(
                           companyName: "Zaivic Tech Wellness Private Limited.",
@@ -478,303 +489,308 @@ class _ResumeState extends State<Resume> {
             ),
           ),
           //Skill-Tech Cards
-          Container(
-            // color: Colors.blue,
-            margin: EdgeInsets.only(top: 20),
-            width: size.width*0.7,
-            child: Column(
-              children: [
-                //ROW 1:
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      //Dart
-                      SizedBox(
-                        width: size.width * 0.09,
-                        height: size.height * 0.18,
-                        child: Card(
-                          elevation: 8,
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/dartlogo.png",width: 70,),
-                                const SizedBox(height: 10),
-                                const Text(
-                                  "Dart",
-                                  style: TextStyle(
-                                    // color: Color(0xFFFFEE58),
-                                      color: Color(0xFFD6EFD8),
-                                      // color: Colors.redAccent,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      //Flutter
-                      SizedBox(
-                        width: size.width * 0.09,
-                        height: size.height * 0.18,
-                        child: Card(
-                          elevation: 8,
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/flutter.png",width: 70,),
-                                const SizedBox(height: 10),
-                                const Text(
-                                  "Flutter",
-                                  style: TextStyle(
-                                    // color: Color(0xFFFFEE58),
-                                      color: Color(0xFFD6EFD8),
-                                      // color: Colors.redAccent,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      //Firebase
-                      SizedBox(
-                        width: size.width * 0.09,
-                        height: size.height * 0.18,
-                        child: Card(
-                          elevation: 8,
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/firebase.png",width: 70,),
-                                const SizedBox(height: 10),
-                                const Text(
-                                  "Firebase",
-                                  style: TextStyle(
-                                    // color: Color(0xFFFFEE58),
-                                      color: Color(0xFFD6EFD8),
-                                      // color: Colors.redAccent,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      //Figma
-                      SizedBox(
-                        width: size.width * 0.09,
-                        height: size.height * 0.18,
-                        child: Card(
-                          elevation: 8,
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/figma.png",width: 70,),
-                                const SizedBox(height: 10),
-                                const Text(
-                                  "Figma",
-                                  style: TextStyle(
-                                    // color: Color(0xFFFFEE58),
-                                      color: Color(0xFFD6EFD8),
-                                      // color: Colors.redAccent,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      //AWS
-                      SizedBox(
-                        width: size.width * 0.09,
-                        height: size.height * 0.18,
-                        child: Card(
-                          elevation: 8,
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/aws.png",width: 70,),
-                                const SizedBox(height: 10),
-                                const Text(
-                                  "AWS",
-                                  style: TextStyle(
-                                    // color: Color(0xFFFFEE58),
-                                      color: Color(0xFFD6EFD8),
-                                      // color: Colors.redAccent,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                //ROW 2
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      //HTML
-                    SizedBox(
-                      width: size.width * 0.09,
-                      height: size.height * 0.18,
-                      child: Card(
-                        elevation: 8,
-                        color:  const Color(0xFF222627),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: [
-                              Image.asset("assets/html.png",width: 70,),
-                              const SizedBox(height: 10),
-                              const Text(
-                                "HTML",
-                                style: TextStyle(
-                                  // color: Color(0xFFFFEE58),
-                                    color: Color(0xFFD6EFD8),
-                                    // color: Colors.redAccent,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold),
+          AnimatedOpacity(
+            duration: Duration(milliseconds: 500),
+            opacity: skillCard?1:0,
+            curve: Curves.easeIn,
+            child: Container(
+              // color: Colors.blue,
+              margin: EdgeInsets.only(top: 20),
+              width: size.width*0.7,
+              child: Column(
+                children: [
+                  //ROW 1:
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        //Dart
+                        SizedBox(
+                          width: size.width * 0.09,
+                          height: size.height * 0.18,
+                          child: Card(
+                            elevation: 8,
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Image.asset("assets/dartlogo.png",width: 70,),
+                                  const SizedBox(height: 10),
+                                  const Text(
+                                    "Dart",
+                                    style: TextStyle(
+                                      // color: Color(0xFFFFEE58),
+                                        color: Color(0xFFD6EFD8),
+                                        // color: Colors.redAccent,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
                           ),
                         ),
-                      ),
+                        //Flutter
+                        SizedBox(
+                          width: size.width * 0.09,
+                          height: size.height * 0.18,
+                          child: Card(
+                            elevation: 8,
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Image.asset("assets/flutter.png",width: 70,),
+                                  const SizedBox(height: 10),
+                                  const Text(
+                                    "Flutter",
+                                    style: TextStyle(
+                                      // color: Color(0xFFFFEE58),
+                                        color: Color(0xFFD6EFD8),
+                                        // color: Colors.redAccent,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        //Firebase
+                        SizedBox(
+                          width: size.width * 0.09,
+                          height: size.height * 0.18,
+                          child: Card(
+                            elevation: 8,
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Image.asset("assets/firebase.png",width: 70,),
+                                  const SizedBox(height: 10),
+                                  const Text(
+                                    "Firebase",
+                                    style: TextStyle(
+                                      // color: Color(0xFFFFEE58),
+                                        color: Color(0xFFD6EFD8),
+                                        // color: Colors.redAccent,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        //Figma
+                        SizedBox(
+                          width: size.width * 0.09,
+                          height: size.height * 0.18,
+                          child: Card(
+                            elevation: 8,
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Image.asset("assets/figma.png",width: 70,),
+                                  const SizedBox(height: 10),
+                                  const Text(
+                                    "Figma",
+                                    style: TextStyle(
+                                      // color: Color(0xFFFFEE58),
+                                        color: Color(0xFFD6EFD8),
+                                        // color: Colors.redAccent,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        //AWS
+                        SizedBox(
+                          width: size.width * 0.09,
+                          height: size.height * 0.18,
+                          child: Card(
+                            elevation: 8,
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Image.asset("assets/aws.png",width: 70,),
+                                  const SizedBox(height: 10),
+                                  const Text(
+                                    "AWS",
+                                    style: TextStyle(
+                                      // color: Color(0xFFFFEE58),
+                                        color: Color(0xFFD6EFD8),
+                                        // color: Colors.redAccent,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                      //CSS
-                      SizedBox(
-                        width: size.width * 0.09,
-                        height: size.height * 0.18,
-                        child: Card(
-                          elevation: 8,
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/css.png",width: 70,),
-                                const SizedBox(height: 10),
-                                const Text(
-                                  "CSS",
-                                  style: TextStyle(
-                                    // color: Color(0xFFFFEE58),
-                                      color: Color(0xFFD6EFD8),
-                                      // color: Colors.redAccent,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      //Javascript
-                      SizedBox(
-                        width: size.width * 0.09,
-                        height: size.height * 0.18,
-                        child: Card(
-                          elevation: 8,
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/javaScript.png",width: 70,),
-                                const SizedBox(height: 10),
-                                const Text(
-                                  "Javascript",
-                                  style: TextStyle(
-                                    // color: Color(0xFFFFEE58),
-                                      color: Color(0xFFD6EFD8),
-                                      // color: Colors.redAccent,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      //Java
-                      SizedBox(
-                        width: size.width * 0.09,
-                        height: size.height * 0.18,
-                        child: Card(
-                          elevation: 8,
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/java.png",width: 70,),
-                                const SizedBox(height: 10),
-                                const Text(
-                                  "Java",
-                                  style: TextStyle(
-                                    // color: Color(0xFFFFEE58),
-                                      color: Color(0xFFD6EFD8),
-                                      // color: Colors.redAccent,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      //DSA
-                      SizedBox(
-                        width: size.width * 0.09,
-                        height: size.height * 0.18,
-                        child: Card(
-                          elevation: 8,
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Image.asset("assets/algo.png",width: 70,),
-                                const SizedBox(height: 10),
-                                const Text(
-                                  "DSA",
-                                  style: TextStyle(
-                                    // color: Color(0xFFFFEE58),
-                                      color: Color(0xFFD6EFD8),
-                                      // color: Colors.redAccent,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-
-                  ],
                   ),
-                ),
-                SizedBox(height: 30,)
-              ],
+                  //ROW 2
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        //HTML
+                      SizedBox(
+                        width: size.width * 0.09,
+                        height: size.height * 0.18,
+                        child: Card(
+                          elevation: 8,
+                          color:  const Color(0xFF222627),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Image.asset("assets/html.png",width: 70,),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  "HTML",
+                                  style: TextStyle(
+                                    // color: Color(0xFFFFEE58),
+                                      color: Color(0xFFD6EFD8),
+                                      // color: Colors.redAccent,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                        //CSS
+                        SizedBox(
+                          width: size.width * 0.09,
+                          height: size.height * 0.18,
+                          child: Card(
+                            elevation: 8,
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Image.asset("assets/css.png",width: 70,),
+                                  const SizedBox(height: 10),
+                                  const Text(
+                                    "CSS",
+                                    style: TextStyle(
+                                      // color: Color(0xFFFFEE58),
+                                        color: Color(0xFFD6EFD8),
+                                        // color: Colors.redAccent,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        //Javascript
+                        SizedBox(
+                          width: size.width * 0.09,
+                          height: size.height * 0.18,
+                          child: Card(
+                            elevation: 8,
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Image.asset("assets/javaScript.png",width: 70,),
+                                  const SizedBox(height: 10),
+                                  const Text(
+                                    "Javascript",
+                                    style: TextStyle(
+                                      // color: Color(0xFFFFEE58),
+                                        color: Color(0xFFD6EFD8),
+                                        // color: Colors.redAccent,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        //Java
+                        SizedBox(
+                          width: size.width * 0.09,
+                          height: size.height * 0.18,
+                          child: Card(
+                            elevation: 8,
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Image.asset("assets/java.png",width: 70,),
+                                  const SizedBox(height: 10),
+                                  const Text(
+                                    "Java",
+                                    style: TextStyle(
+                                      // color: Color(0xFFFFEE58),
+                                        color: Color(0xFFD6EFD8),
+                                        // color: Colors.redAccent,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        //DSA
+                        SizedBox(
+                          width: size.width * 0.09,
+                          height: size.height * 0.18,
+                          child: Card(
+                            elevation: 8,
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Image.asset("assets/algo.png",width: 70,),
+                                  const SizedBox(height: 10),
+                                  const Text(
+                                    "DSA",
+                                    style: TextStyle(
+                                      // color: Color(0xFFFFEE58),
+                                        color: Color(0xFFD6EFD8),
+                                        // color: Colors.redAccent,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+            
+                    ],
+                    ),
+                  ),
+                  SizedBox(height: 30,)
+                ],
+              ),
             ),
           )
         ],
