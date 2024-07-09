@@ -69,7 +69,7 @@ class LeftProfileView extends StatelessWidget {
                       ),
                     ),
                     //Button for re-directing it to Linked in profile
-                    Container(
+                    SizedBox(
                       width: 250,
                       height: 50,
                       child: InkWell(
@@ -106,91 +106,81 @@ class LeftProfileView extends StatelessWidget {
                 ),
                 //Second Half After Linked in Button
                 //Social Media handles
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Padding(
+                Column(
+                  children: [
+                    //Email Row
+                    Container(
+                      margin: const EdgeInsets.only(left: 25),
+                      child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: [
-                            Container(
-                              width: size.width*0.019,
-                              // color: Colors.blue,
+                            SizedBox(
+                              width: 25,
                               child: Image.asset("assets/gmailLogo.png",),
                             ),
-                            SizedBox(width: 30,),
-                            Expanded(
-                              child: Container(
-                                width: size.width*0.12,
-                                // color: Colors.white,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Email",style: TextStyle(
-                                        fontSize: 16,fontWeight: FontWeight.bold,color: Colors.grey
-                                    ),),
-                                    Text("deepakkumar224336@gmail.com",style: TextStyle(
-                                        fontSize: 14,color: Colors.white
-                                    ),)
-                                  ],
-                                ),
-                              ),
-                            ),
-
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Container(
-                              width: size.width*0.021,
-                              // color: Colors.blue,
-                              child: Image.asset("assets/location.png"),
-                            ),
-                            SizedBox(width: 30,),
-                            Expanded(
-                              child: Container(
-                                width: size.width*0.12,
-                                height: 50,
-                                // color: Colors.white,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Location",style: TextStyle(
-                                        fontSize: 16,fontWeight: FontWeight.bold,color: Colors.grey
-                                    ),),
-                                    Text("Uttar Pradesh",style: TextStyle(
-                                        fontSize: 14,color: Colors.white
-                                    ),)
-                                  ],
-                                ),
+                            const SizedBox(width: 30,),
+                            const Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Email",style: TextStyle(
+                                      fontSize: 16,fontWeight: FontWeight.bold,color: Colors.grey
+                                  ),),
+                                  Text("deepakkumar224336@gmail.com",style: TextStyle(
+                                      fontSize: 14,color: Colors.white
+                                  ),)
+                                ],
                               ),
                             ),
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Container(
-                              width: size.width*0.021,
-                              // color: Colors.blue,
-                              // child: Image.asset("assets/location.png"),
-                              child: Icon(
-                                Icons.call,color: Colors.white,size: 30,
-                              ),
+                    ),
+                    Container(
+                      width: 260,
+                      // color: Colors.blue,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 25,
+                                  // color: Colors.blue,
+                                  child: Image.asset("assets/location.png"),
+                                ),
+                                const SizedBox(width: 30,),
+                                const Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Location",style: TextStyle(
+                                          fontSize: 16,fontWeight: FontWeight.bold,color: Colors.grey
+                                      ),),
+                                      Text("Noida, UP",style: TextStyle(
+                                          fontSize: 14,color: Colors.white
+                                      ),)
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
-                            SizedBox(width: 30,),
-                            Expanded(
-                              child: Container(
-                                width: size.width*0.12,
-                                height: 50,
-                                // color: Colors.white,
-                                child: Column(
+                          ),
+                          // Column Location + Contact
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 25,
+                                  child: Icon(
+                                    Icons.call,color: Colors.white,size: 25,
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text("Contact",style: TextStyle(
@@ -201,13 +191,13 @@ class LeftProfileView extends StatelessWidget {
                                     ),)
                                   ],
                                 ),
-                              ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    )
+                  ],
                 ),
                 //Download Buttons
                 Row(
@@ -272,7 +262,7 @@ class LeftProfileView extends StatelessWidget {
                                 mainAxisAlignment:
                                 MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  Text(
+                                  const Text(
                                     "Github",
                                     style: TextStyle(color: Color(0xFFFFEE58),fontWeight: FontWeight.w900),
                                   ),

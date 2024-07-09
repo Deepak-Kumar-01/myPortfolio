@@ -33,16 +33,16 @@ class _RightProfileViewState extends State<RightProfileView> {
         child: Stack(
           children: [
             //Content Area
-            Portfolio(title: "Portfolio",width: 0,),
-            // onAboutMe
-            //     ? AboutMe(title: "About Me",width: 0,)
-            //     : onResume
-            //     ? Resume(title: "Resume",width: 0,)
-            //     : onPortfolio
-            //     ? Portfolio(title: "Portfolio",width: 0,)
-            //     : onContact
-            //     ? ContactMe(title: "Contact Me",width: 0,)
-            //     : Text(""),
+            // Portfolio(title: "Portfolio",width: 0,),
+            onAboutMe
+                ? AboutMe(title: "About Me",width: 0,)
+                : onResume
+                ? Resume(title: "Resume",width: 0,)
+                : onPortfolio
+                ? Portfolio(title: "Portfolio",width: 0,)
+                : onContact
+                ? ContactMe(title: "Contact Me",width: 0,)
+                : Text(""),
             Positioned(
               right: 0,
               child: Container(
