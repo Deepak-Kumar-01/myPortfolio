@@ -23,13 +23,10 @@ class _ResumeState extends State<Resume> {
   double _eduLine3 = 0;
   double _internLine2=0;
   bool skillCard=false;
-  bool _educationBlock=false;
-  bool _internshipBlock=false;
 
 
   @override
   void initState() {
-    print("Resume Widget is called");
     int w = widget.width;
     super.initState();
     //Resume Underline Delay
@@ -81,7 +78,7 @@ class _ResumeState extends State<Resume> {
         _internLine1=12 ;
       });
     });
-    //showinternLine1
+    //show internLine1
     Future.delayed(Duration(milliseconds: 1400), () {
       setState(() {
         showinternLine1=true;

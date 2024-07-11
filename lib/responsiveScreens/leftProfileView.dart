@@ -159,7 +159,7 @@ class LeftProfileView extends StatelessWidget {
                                       Text("Location",style: TextStyle(
                                           fontSize: 16,fontWeight: FontWeight.bold,color: Colors.grey
                                       ),),
-                                      Text("Noida, UP",style: TextStyle(
+                                      Text("Noida, India",style: TextStyle(
                                           fontSize: 14,color: Colors.white
                                       ),)
                                     ],

@@ -30,7 +30,6 @@ class _WebDeskHomeState extends State<WebDeskHome> {
         colors: [
           Color(0xFF000000),
           Color(0xFF2D3436),
-          // Color(0xFF211F2C),
         ],
       )),
       height: size.height,

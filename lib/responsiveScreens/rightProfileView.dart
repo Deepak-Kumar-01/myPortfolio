@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myportfolio/buttons/navigationButton.dart';
 import 'package:myportfolio/pages/aboutme.dart';
+import 'package:myportfolio/pages/myCertificates.dart';
 import 'package:myportfolio/pages/contactme.dart';
 import 'package:myportfolio/pages/portfolio.dart';
 import 'package:myportfolio/pages/resume.dart';
@@ -17,6 +18,7 @@ class _RightProfileViewState extends State<RightProfileView> {
   bool onResume = false;
   bool onPortfolio = false;
   bool onContact = false;
+  bool onCertificates=false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,16 +35,17 @@ class _RightProfileViewState extends State<RightProfileView> {
         child: Stack(
           children: [
             //Content Area
-            // Portfolio(title: "Portfolio",width: 0,),
-            onAboutMe
-                ? AboutMe(title: "About Me",width: 0,)
-                : onResume
-                ? Resume(title: "Resume",width: 0,)
-                : onPortfolio
-                ? Portfolio(title: "Portfolio",width: 0,)
-                : onContact
-                ? ContactMe(title: "Contact Me",width: 0,)
-                : Text(""),
+            MyCertificates(title: "Certificates", width: 0),
+
+            // onAboutMe
+            //     ? AboutMe(title: "About Me",width: 0,)
+            //     : onResume
+            //     ? Resume(title: "Resume",width: 0,)
+            //     : onPortfolio
+            //     ? Portfolio(title: "Portfolio",width: 0,)
+            //     : onCertificates
+            //     ? MyCertificates(title: "Cerificates",width: 0,)
+            //     : Text(""),
             Positioned(
               right: 0,
               child: Container(
@@ -50,7 +53,7 @@ class _RightProfileViewState extends State<RightProfileView> {
                 height: 80,
                 decoration: BoxDecoration(
                     color: Colors.blue[900],
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(30.0),
                       topRight: Radius.circular(20)
                     ),
@@ -67,6 +70,8 @@ class _RightProfileViewState extends State<RightProfileView> {
                             onResume = false;
                             onPortfolio = false;
                             onContact = false;
+                            onCertificates=false;
+
                           });
                         },
                         hoverColor: Colors.black12,
@@ -93,6 +98,8 @@ class _RightProfileViewState extends State<RightProfileView> {
                             onResume = true;
                             onPortfolio = false;
                             onContact = false;
+                            onCertificates=false;
+
                           });
                         },
                         hoverColor: Colors.black12,
@@ -109,7 +116,7 @@ class _RightProfileViewState extends State<RightProfileView> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       InkWell(
@@ -119,6 +126,8 @@ class _RightProfileViewState extends State<RightProfileView> {
                             onResume = false;
                             onPortfolio = true;
                             onContact = false;
+                            onCertificates=false;
+
                           });
                         },
                         hoverColor: Colors.black12,
@@ -135,7 +144,7 @@ class _RightProfileViewState extends State<RightProfileView> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       InkWell(
@@ -144,7 +153,8 @@ class _RightProfileViewState extends State<RightProfileView> {
                             onAboutMe = false;
                             onResume = false;
                             onPortfolio = false;
-                            onContact = true;
+                            onContact = false;
+                            onCertificates=true;
                           });
                         },
                         hoverColor: Colors.black12,
@@ -152,7 +162,7 @@ class _RightProfileViewState extends State<RightProfileView> {
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Text(
-                            "Contact me",
+                            "Certificates",
                             style: TextStyle(
                                 color: onContact
                                     ? Colors.white
@@ -161,7 +171,7 @@ class _RightProfileViewState extends State<RightProfileView> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                     ],
