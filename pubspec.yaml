@@ -82,6 +82,10 @@ flutter:
      - assets/algo.png
      - assets/poster1.png
      - assets/innvoconLogo.png
+     - assets/InnvoconCertificate.jpg
+     - assets/mongodb.png
+     - assets/node.png
+     - assets/react.png
      - assets/poster1.jpg
      - assets/poster2.jpg
      - assets/view.png

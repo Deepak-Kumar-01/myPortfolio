@@ -116,53 +116,6 @@ class _CertificateCardState extends State<CertificateCard> {
               ],
             ),
           ),
-          //Company Name + Project Name + Stack Used
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              //Company Name
-              Row(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 30, top: 10),
-                    child: Text("Company : ",style: TextStyle(
-                        color: Colors.deepOrangeAccent,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 0, top: 10),
-                    child: Text(
-                      "${widget.companyName}",
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ],
-              ),
-              //Project Name
-              Row(
-                children: [
-                   Padding(
-                    padding: EdgeInsets.only(left: 30),
-                    child: Text(
-                      "Project : ",
-                      style: TextStyle(color: Colors.blue[200], fontSize: 18,fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 0),
-                    child: Text(
-                      " ${widget.projectName}",
-                      style: const TextStyle(color: Colors.white, fontSize: 16),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          )
         ],
       ),
     );

@@ -16,7 +16,7 @@ class _InternshipSectionState extends State<InternshipSection> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 800), () {
+    Future.delayed(const Duration(milliseconds: 700), () {
       setState(() {
         isVisible = true;
       });
@@ -29,37 +29,17 @@ class _InternshipSectionState extends State<InternshipSection> {
       opacity: isVisible ? 1 : 0,
       curve: Curves.easeIn,
       child: Container(
+        width: MediaQuery.of(context).size.width,
         // color: Colors.blue,
-        margin: EdgeInsets.only(top: 30,bottom: 40),
-        // width: size.width*0.4,
+        margin: EdgeInsets.only(top: 30,bottom: 40,left: 0),
         child: const Column(
           children: [
             //ROW 1:
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  //First Card
-                  // Padding(
-                  //   padding: EdgeInsets.only(left: 20),
-                  //   child: CertificateCard(
-                  //     companyName: "Innvocon",
-                  //     projectName: "Personal Branding Website.",
-                  //     imageOfCompany: "assets/poster1.png",
-                  //     companyWebsiteUrl: "https://www.innvocon.co.in/",
-                  //   ),
-                  // ),
-                  InternshipCard(),
-                ],
-              ),
-            ),
+            InternshipCard(),
             //Gap
             SizedBox(
-              height: 30,
+              height: 20,
             ),
-            //ROW 2 :
-
           ],
         ),
       ),

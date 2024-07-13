@@ -22,7 +22,7 @@ class _PortfolioState extends State<Portfolio> {
         _width = w as double;
       });
     });
-    Future.delayed(Duration(milliseconds: 800), () {
+    Future.delayed(Duration(milliseconds: 500), () {
       setState(() {
         projectCards = true;
       });

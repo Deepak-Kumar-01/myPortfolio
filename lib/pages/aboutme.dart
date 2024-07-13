@@ -13,15 +13,29 @@ class AboutMe extends StatefulWidget {
 
 class _AboutMeState extends State<AboutMe> {
   double _width = 0;
-
+  bool showAboutMeTxt=false;
+  bool showSkillCards=false;
   @override
   void initState() {
     super.initState();
     int w = widget.width;
-    Future.delayed(const Duration(milliseconds: 300), () {
+    //About underline
+    Future.delayed(const Duration(milliseconds: 400), () {
       setState(() {
         w = 110;
         _width = w.toDouble();
+      });
+    });
+    //About me text opacity
+    Future.delayed(const Duration(milliseconds: 800), () {
+      setState(() {
+        showAboutMeTxt=true;
+      });
+    });
+    //Skills card
+    Future.delayed(const Duration(milliseconds: 1200), () {
+      setState(() {
+        showSkillCards=true;
       });
     });
   }
@@ -33,6 +47,7 @@ class _AboutMeState extends State<AboutMe> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          //About title
           Container(
             margin: EdgeInsets.only(left: 40, top: 20),
             child: Text(
@@ -43,6 +58,7 @@ class _AboutMeState extends State<AboutMe> {
                   fontWeight: FontWeight.bold),
             ),
           ),
+          //About underline
           AnimatedContainer(
             margin: EdgeInsets.only(left: 40),
             duration: Duration(milliseconds: 500),
@@ -52,14 +68,19 @@ class _AboutMeState extends State<AboutMe> {
                 color: Colors.yellowAccent,
                 borderRadius: BorderRadius.circular(10)),
           ),
-          // Intro
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Container(
-              margin: EdgeInsets.only(left: 20, top: 60),
-              child: const Text(
-                about_me,
-                style: TextStyle(color: Colors.white70, fontSize: 20),
+          // Intro text
+          AnimatedOpacity(
+            duration: Duration(milliseconds: 600),
+            opacity: showAboutMeTxt?1:0,
+            curve: Curves.easeIn,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                margin: EdgeInsets.only(left: 20, top: 60),
+                child: const Text(
+                  about_me,
+                  style: TextStyle(color: Colors.white70, fontSize: 20),
+                ),
               ),
             ),
           ),
@@ -80,44 +101,96 @@ class _AboutMeState extends State<AboutMe> {
           //Progress Card
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Container(
-              width: size.width*0.7,
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        width: size.width * 0.3,
-                        height: size.height * 0.20,
-                        child: Card(
-                          elevation: 8,
-                          margin: const EdgeInsets.all(8),
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Row(
-                              children: [
-                                Image.asset("assets/phone.png",color: Colors.white,),
-                                const SizedBox(width: 20),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      const Text(
-                                        "Mobile Apps",
-                                        style: TextStyle(
-                                            color: Color(0xFFFFEE58),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
-                                      Expanded(
-                                        child: Container(
-                                          child: const Text(
-                                            "Professional development of applications for iOS and Android",
+            child: AnimatedOpacity(
+              curve: Curves.easeIn,
+              duration: Duration(milliseconds: 700),
+              opacity: showSkillCards?1:0,
+              child: Container(
+                width: size.width*0.7,
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        SizedBox(
+                          width: size.width * 0.3,
+                          height: size.height * 0.20,
+                          child: Card(
+                            elevation: 8,
+                            margin: const EdgeInsets.all(8),
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Row(
+                                children: [
+                                  Image.asset("assets/phone.png",color: Colors.white,),
+                                  const SizedBox(width: 20),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          "Mobile Apps",
+                                          style: TextStyle(
+                                              color: Color(0xFFFFEE58),
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        const SizedBox(
+                                          height: 8,
+                                        ),
+                                        Expanded(
+                                          child: Container(
+                                            child: const Text(
+                                              "Professional development of applications for iOS and Android",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 14,
+                                              ),
+                                              maxLines: 5,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: size.width * 0.3,
+                          height: size.height * 0.20,
+                          child: Card(
+                            elevation: 8,
+                            margin: const EdgeInsets.all(8),
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Row(
+                                children: [
+                                  Image.asset("assets/dev.png",color: Colors.white,width: 55,),
+                                  const SizedBox(width: 20),
+                                  const Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+
+                                      children: [
+                                        Text(
+                                          "Web Development",
+                                          style: TextStyle(
+                                              color: Color(0xFFFFEE58),
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        SizedBox(
+                                          height: 8,
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            "High-quality development of sites at the professional level",
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 14,
@@ -126,164 +199,117 @@ class _AboutMeState extends State<AboutMe> {
                                             overflow: TextOverflow.ellipsis,
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        width: size.width * 0.3,
-                        height: size.height * 0.20,
-                        child: Card(
-                          elevation: 8,
-                          margin: const EdgeInsets.all(8),
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Row(
-                              children: [
-                                Image.asset("assets/dev.png",color: Colors.white,width: 55,),
-                                const SizedBox(width: 20),
-                                const Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        SizedBox(
+                          width: size.width * 0.3,
+                          height: size.height * 0.20,
+                          child: Card(
+                            elevation: 8,
+                            margin: const EdgeInsets.all(8),
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Row(
+                                children: [
+                                  Image.asset("assets/ux.png",color: Colors.white,width: 55,),
+                                  const SizedBox(width: 20),
+                                  const Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
 
-                                    children: [
-                                      Text(
-                                        "Web Development",
-                                        style: TextStyle(
-                                            color: Color(0xFFFFEE58),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      SizedBox(
-                                        height: 8,
-                                      ),
-                                      Expanded(
-                                        child: Text(
-                                          "High-quality development of sites at the professional level",
+                                      children: [
+                                        Text(
+                                          "UI/UX",
                                           style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 14,
-                                          ),
-                                          maxLines: 5,
-                                          overflow: TextOverflow.ellipsis,
+                                              color: Color(0xFFFFEE58),
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold),
                                         ),
-                                      ),
-                                    ],
+                                        SizedBox(
+                                          height: 8,
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            "Creating professional design templates for both web and mobile.",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                            ),
+                                            maxLines: 5,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        width: size.width * 0.3,
-                        height: size.height * 0.20,
-                        child: Card(
-                          elevation: 8,
-                          margin: const EdgeInsets.all(8),
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Row(
-                              children: [
-                                Image.asset("assets/ux.png",color: Colors.white,width: 55,),
-                                const SizedBox(width: 20),
-                                const Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                        SizedBox(
+                          width: size.width * 0.3,
+                          height: size.height * 0.20,
+                          child: Card(
+                            elevation: 8,
+                            margin: const EdgeInsets.all(8),
+                            color:  const Color(0xFF222627),
+                            child: Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Row(
+                                children: [
+                                  Image.asset("assets/aws.png",width: 55,),
+                                  const SizedBox(width: 20),
+                                  const Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
 
-                                    children: [
-                                      Text(
-                                        "UI/UX",
-                                        style: TextStyle(
-                                            color: Color(0xFFFFEE58),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      SizedBox(
-                                        height: 8,
-                                      ),
-                                      Expanded(
-                                        child: Text(
-                                          "Creating professional design templates for both web and mobile.",
+                                      children: [
+                                        Text(
+                                          "Amazon Web Services",
                                           style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 14,
-                                          ),
-                                          maxLines: 5,
-                                          overflow: TextOverflow.ellipsis,
+                                              color: Color(0xFFFFEE58),
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold),
                                         ),
-                                      ),
-                                    ],
+                                        SizedBox(
+                                          height: 8,
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            "I am expanding my skill set by learning AWS, focusing on cloud services and infrastructure. ",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                            ),
+                                            maxLines: 5,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        width: size.width * 0.3,
-                        height: size.height * 0.20,
-                        child: Card(
-                          elevation: 8,
-                          margin: const EdgeInsets.all(8),
-                          color:  const Color(0xFF222627),
-                          child: Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Row(
-                              children: [
-                                Image.asset("assets/aws.png",width: 55,),
-                                const SizedBox(width: 20),
-                                const Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-
-                                    children: [
-                                      Text(
-                                        "Amazon Web Services",
-                                        style: TextStyle(
-                                            color: Color(0xFFFFEE58),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      SizedBox(
-                                        height: 8,
-                                      ),
-                                      Expanded(
-                                        child: Text(
-                                          "I am expanding my skill set by learning AWS, focusing on cloud services and infrastructure. ",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 14,
-                                          ),
-                                          maxLines: 5,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           )
