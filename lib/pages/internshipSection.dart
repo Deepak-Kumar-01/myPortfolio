@@ -40,6 +40,8 @@ class _InternshipSectionState extends State<InternshipSection> {
             SizedBox(
               height: 20,
             ),
+            // InternshipCard(),
+
           ],
         ),
       ),

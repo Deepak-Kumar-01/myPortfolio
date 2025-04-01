@@ -64,6 +64,8 @@ flutter:
   assets:
      - assets/cosmos-transparent.riv
      - assets/jumpin_peek_animation.riv
+     - assets/profile_img.png
+     - assets/MA_ui.png
      - assets/skills.png
      - assets/profileImage.jpg
      - assets/linkedin.png

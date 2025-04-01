@@ -275,7 +275,7 @@ class _ResumeState extends State<Resume> {
                           title: "JSS Academy of Technical Education [PG]",
                           session: "2023-2025",
                           description: pgContent,
-                          sgpa: "7.83",
+                          sgpa: "7.7",
                           status: "Ongoing",
                           cgpa: "Pending",
                         ),
@@ -434,6 +434,99 @@ class _ResumeState extends State<Resume> {
                           projectName: "Personal Branding Website",
                           session: "2019-2020",
                           description: internshipContent1,
+                          imagePath1: "",
+                          imagePath2: "",
+                          imagePath3: "",
+                          imagePath4: "",
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 30, top: 0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //left Line ANIMATION
+                SizedBox(
+                  // color: Colors.blue,
+                  width: size.width * 0.04,
+                  child: Column(
+                    children: [
+                      //Animated Line 1
+                      AnimatedContainer(
+                        margin: EdgeInsets.only(left: 0, top: 0),
+                        width: 2,
+                        height: _internLine1,
+                        duration: Duration(milliseconds: 500),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFFD3D3D3),
+                              Color(0xFF2D3436),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      //Yellow Dot
+                      AnimatedContainer(
+                        width: 15,
+                        height: 15,
+                        duration: Duration(milliseconds: 500),
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                colors:
+                                _internLine1==12?[Color(0xFFFFEE58),Color(0xFFD2A813)]:[const Color(0xFF1C1F20),const Color(0xFF1C1F20)]
+                            ),
+                            borderRadius: BorderRadius.circular(30)),
+                      ),
+                      // //Animated LLine 2
+                      AnimatedContainer(
+                        margin: EdgeInsets.only(left: 0, top: 0),
+                        width: 2,
+                        height: _internLine2,
+                        duration: Duration(milliseconds: 500),
+                        decoration: BoxDecoration(
+                          // color: Colors.white54,
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFFD3D3D3),
+                              Color(0xFF2D3436),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 20,),
+                //Right Side Content
+                //RESUME
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    //Internship 1
+                    SizedBox(
+                      width: size.width * 0.4,
+                      // color: Colors.yellowAccent,
+                      child: AnimatedOpacity(
+                        duration: Duration(milliseconds: 300),
+                        opacity: showinternLine1?1:0,
+                        child: const InternshipDetails(
+                          companyName: "Half Life To Health",
+                          projectName: "Mobile App Developer",
+                          session: "2024-Present",
+                          description: internshipContent2,
                           imagePath1: "",
                           imagePath2: "",
                           imagePath3: "",

@@ -68,6 +68,20 @@ class _LeftProfileViewState extends State<LeftProfileView> {
                     child: Column(
                       children: [
                         //Profile Image
+                        // Card(
+                        //   elevation: 8,
+                        //   shape: RoundedRectangleBorder(
+                        //     borderRadius: BorderRadius.circular(100),
+                        //   ),
+                        //   color: const Color(0xFF211F2C),
+                        //   child: Container(
+                        //     width: 150,
+                        //     height: 150,
+                        //     decoration: const BoxDecoration(
+                        //       shape: BoxShape.circle,
+                        //     ),
+                        //   ),
+                        // ),
                         Card(
                           elevation: 8,
                           shape: RoundedRectangleBorder(
@@ -80,8 +94,15 @@ class _LeftProfileViewState extends State<LeftProfileView> {
                             decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                             ),
+                            child: ClipOval(
+                              child: Image.network(
+                                "assets/profile_img.png", // Replace with your image URL or Asset path
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                         ),
+
                         //Name Section
                         Container(
                           margin: EdgeInsets.only(top: 20),
@@ -249,7 +270,7 @@ class _LeftProfileViewState extends State<LeftProfileView> {
                         height: 50,
                         child: InkWell(
                           onTap: (){
-                            String url="https://drive.google.com/file/d/1a9ceHKgy5Eh_AYb8eNlZCNxsX8TsIgx-/view?usp=drive_link";
+                            String url="https://drive.google.com/file/d/1Vmf4kpMmVdYjNKV2VzwdHhNCaNKiU1e9/view?usp=sharing";
                             _launchURL(url);
                           },
                           child: Card(

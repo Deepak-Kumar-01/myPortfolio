@@ -75,20 +75,20 @@ class _PortfolioState extends State<Portfolio> {
                         ProjectCard(
                           title: "Mobile App",
                           subTitle: "Full Stack native mobile application.",
-                          imagePath: "assets/poster1.png",
-                          url: "https://github.com/Deepak-Kumar-01",
+                          imagePath: "assets/MA_ui.png",
+                          url: "https://github.com/Deepak-Kumar-01/Student-App",
                         ),
                         //Second Card
                         ProjectCard(
-                          title: "Porfolio",
-                          subTitle: "Place where you FLEX.",
+                          title: "Portfolio-1",
+                          subTitle: "A portfolio created by using Flutter",
                           imagePath: "assets/poster1.jpg",
-                          url: "https://github.com/Deepak-Kumar-01",
+                          url: "https://github.com/Deepak-Kumar-01/myPortfolio",
                         ),
                         //Third Card
                         ProjectCard(
-                          title: "Play Word",
-                          subTitle: "A Puzzle Game.",
+                          title: "Portfolio-2",
+                          subTitle: "A Portfolio created using React.js",
                           imagePath: "assets/poster2.jpg",
                           url: "https://github.com/Deepak-Kumar-01",
                         ),
@@ -100,21 +100,21 @@ class _PortfolioState extends State<Portfolio> {
                     height: 30,
                   ),
                   //ROW 2 :
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        //First Card
-                        ProjectCard(
-                          title: "Udemy Clone",
-                          subTitle: "Web Development",
-                          imagePath: "assets/poster1.jpg",
-                          url: "https://github.com/Deepak-Kumar-01",
-                        ),
-                      ],
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: EdgeInsets.all(8.0),
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  //     children: [
+                  //       //First Card
+                  //       ProjectCard(
+                  //         title: "Udemy Clone",
+                  //         subTitle: "Web Development",
+                  //         imagePath: "assets/poster1.jpg",
+                  //         url: "https://github.com/Deepak-Kumar-01",
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
             ),
