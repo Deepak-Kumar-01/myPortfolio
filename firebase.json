@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "portfolio-flutter-web-b9aec-ca12d",
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

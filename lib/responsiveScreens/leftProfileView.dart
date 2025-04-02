@@ -95,14 +95,13 @@ class _LeftProfileViewState extends State<LeftProfileView> {
                               shape: BoxShape.circle,
                             ),
                             child: ClipOval(
-                              child: Image.network(
+                              child: Image.asset(
                                 "assets/profile_img.png", // Replace with your image URL or Asset path
                                 fit: BoxFit.cover,
                               ),
                             ),
                           ),
                         ),
-
                         //Name Section
                         Container(
                           margin: EdgeInsets.only(top: 20),

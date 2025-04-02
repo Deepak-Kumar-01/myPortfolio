@@ -517,7 +517,7 @@ class _ResumeState extends State<Resume> {
                   children: [
                     //Internship 1
                     SizedBox(
-                      width: size.width * 0.4,
+                      width: size.width * 0.5,
                       // color: Colors.yellowAccent,
                       child: AnimatedOpacity(
                         duration: Duration(milliseconds: 300),
